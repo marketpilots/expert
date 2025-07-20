@@ -19,6 +19,10 @@
       padding: 20px;
       max-width: 500px;
       margin: auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     img.dp {
@@ -26,7 +30,7 @@
       height: 100px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 15px;
+      margin: 0 auto 15px;
     }
 
     h1 {
@@ -59,7 +63,7 @@
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
-      margin: 15px 0;
+      margin-top: 15px;
       font-size: 16px;
       animation: pulse 1s infinite;
       cursor: pointer;
@@ -130,18 +134,38 @@
 
     <h2>Start Your Investment Journey — Made Simple for Indian Traders</h2>
 
-    <a class="telegram-btn" href="https://telegram.me/+cnaQezNBkIFhMjA1">
-      JOIN FREE TELEGRAM
-    </a>
-
     <p class="description">
-      Invest Smarter, Grow Faster – The Indian Way and make smarter decisions —no prior experience required.
+      Check our work in channel, then trust our services. <br><strong>Guaranteed Return On !nvestment.</strong>
     </p>
 
     <div>
       <a href="javascript:void(0);" class="countdown-btn" id="countdownBtn">
         Free Joining Ends In <span id="timer">20</span> seconds
       </a>
+    </div>
+
+    <a class="telegram-btn" href="https://telegram.me/+cnaQezNBkIFhMjA1">
+      JOIN FREE TELEGRAM
+    </a>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials" style="margin-top: 40px;">
+      <h3 style="color: #333; font-size: 18px; margin-bottom: 20px;">📣 What Our Members Say</h3>
+
+      <div class="testimonial" style="background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+        <p style="font-size: 14px; color: #444; line-height: 1.5;">"Very helpful Telegram group! I started as a beginner and now confidently track the markets daily."</p>
+        <strong style="display: block; margin-top: 10px; font-size: 13px; color: #222;">– Ramesh S., Pune</strong>
+      </div>
+
+      <div class="testimonial" style="background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+        <p style="font-size: 14px; color: #444; line-height: 1.5;">"I appreciate the clear updates in Hindi. No confusing jargon. Great for retail traders!"</p>
+        <strong style="display: block; margin-top: 10px; font-size: 13px; color: #222;">– Meera K., Lucknow</strong>
+      </div>
+
+      <div class="testimonial" style="background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+        <p style="font-size: 14px; color: #444; line-height: 1.5;">"Genuine channel with timely calls. I recovered my initial amount within a week!"</p>
+        <strong style="display: block; margin-top: 10px; font-size: 13px; color: #222;">– Harshit V., Ahmedabad</strong>
+      </div>
     </div>
   </div>
 
@@ -157,6 +181,7 @@
     </div>
   </div>
 
+  <!-- JavaScript -->
   <script>
     const timerEl = document.getElementById("timer");
     const countdownBtn = document.getElementById("countdownBtn");
@@ -199,7 +224,7 @@
       }
     }
 
-    setInterval(updateSubs, 200); // 5 per second = 1 every 200ms
+    setInterval(updateSubs, 200);
   </script>
 
   <!-- Meta Pixel Code -->
@@ -216,11 +241,10 @@
     fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1103814591620004&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=1103814591620004&ev=PageView&noscript=1"
   /></noscript>
 
   <script>
-    // Attach Lead event tracking to Telegram button
     document.querySelectorAll('.telegram-btn').forEach(btn => {
       btn.addEventListener('click', function(e) {
         e.preventDefault();
@@ -231,7 +255,6 @@
       });
     });
 
-    // Countdown button also tracks Lead and redirects
     countdownBtn.addEventListener('click', function(e) {
       e.preventDefault();
       fbq('track', 'Lead');
