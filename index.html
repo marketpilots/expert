@@ -2,190 +2,204 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <title>Trading Guruji</title>
-
-  <!-- Preconnect & DNS Prefetch for Telegram -->
-  <link rel="preconnect" href="https://t.me" crossorigin />
-  <link rel="dns-prefetch" href="https://t.me" />
-
-  <!-- Preload key images -->
-  <link rel="preload" as="image" href="bgp.webp" type="image/webp" />
-  <link rel="preload" as="image" href="bgdg.webp" type="image/webp" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join India's beginner-friendly Telegram channel. Learn basics, market trends, and avoid scams — no financial advice or false promises.">
+  <title>Investment Hub India</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
-      width: 100%;
-      height: 100%;
-      font-family: system-ui, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #fff url('bgdg.webp') no-repeat center center / cover;
-    }
-    .box-container {
-      position: relative;
-      width: 92%;
-      max-width: 420px;
-      padding: 3px;
-      border-radius: 12px;
-    }
-    .box-container::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      border-radius: 12px;
-      padding: 3px;
-      background: linear-gradient(90deg, #000, gold, #000);
-      background-size: 600% 600%;
-      animation: borderMove 3s linear infinite;
-      z-index: 1;
-      pointer-events: none;
-    }
-    @keyframes borderMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    .box {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(6px);
-      border-radius: 10px;
-      padding: 20px;
-      position: relative;
-      z-index: 2;
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e9f1f7, #f8fcff);
+      color: #222;
       text-align: center;
     }
+
+    .container {
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+    }
+
     img.dp {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       object-fit: cover;
-      margin: 0 auto 16px;
-      display: block;
+      margin-bottom: 15px;
     }
+
     h1 {
-      color: #002060;
       font-size: 26px;
-      margin-bottom: 16px;
+      margin: 10px 0;
+      color: #229ED9;
     }
-    .subscribers {
-      font-size: 15px;
-      color: #000;
-      margin-bottom: 18px;
-    }
+
     h2 {
-      color: #002060;
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-    h3 {
-      color: #002060;
-      font-size: 15px;
-      margin-bottom: 20px;
-    }
-    .countdown {
-      background: #ff0055;
-      color: #fff;
       font-size: 14px;
-      padding: 12px;
-      border-radius: 5px;
-      margin-bottom: 22px;
+      margin: 20px 10px 10px;
     }
+
+    p.description {
+      font-size: 14px;
+      margin: 15px 0;
+    }
+
+    small {
+      display: block;
+      font-size: 13px;
+      margin-top: 5px;
+      color: #555;
+    }
+
     .telegram-btn {
-      display: flex;
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #229ED9;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 15px 0;
+      font-size: 16px;
+      animation: pulse 1s infinite;
+      cursor: pointer;
+    }
+
+    .countdown-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #E91E63;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 16px;
+      margin: 10px 0;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    #telegramModal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      display: none;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      width: 100%;
+    }
+
+    #telegramModal .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 300px;
+      margin: auto;
+    }
+
+    #telegramModal button {
+      padding: 10px 20px;
       background: #229ED9;
-      color: white;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
       font-size: 15px;
-      font-weight: 700;
-      padding: 12px 0;
-      border-radius: 40px;
-      text-decoration: none;
-      margin-bottom: 16px;
-      animation: pulse 1.4s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.05); opacity: 0.95; }
-    }
-    .telegram-btn svg {
-      width: 18px;
-      height: 18px;
-      fill: white;
-    }
-    .note {
-      font-size: 14px;
-      color: #111;
-      font-weight: 700;
+      cursor: pointer;
     }
   </style>
 </head>
-
 <body>
-  <div class="box-container">
-    <div class="box">
-      <img
-        src="bgp.webp"
-        alt="Trading Guruji Logo"
-        class="dp"
-        width="80"
-        height="80"
-        loading="lazy"
-        decoding="async"
-        fetchpriority="high"
-      />
-      <h1>Trading Guruji</h1>
-      <div class="subscribers">
-        <span id="subscriberCount">23,990</span> Subscribers
-      </div>
-      <h2>Stop Guessing, Start Trading Like a Pro</h2>
-      <h3>Daily Tips, Live Analysis & Expert Guidance</h3>
-      <div class="countdown">
-        Free Joining Ends In <span id="timer">20</span> Seconds
-      </div>
-      <a href="https://t.me/+VFpvvMWl3-43MWJl" class="telegram-btn" rel="noopener">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" aria-hidden="true">
-          <path d="M120,0C53.7,0,0,53.7,0,120s53.7,120,120,120s120-53.7,120-120S186.3,0,120,0z M177.3,78.2l-21.2,99.6
-           c-1.6,7.1-5.8,8.8-11.7,5.5l-32.4-23.9l-15.6,15.1c-1.7,1.7-3.2,3.2-6.5,3.2l2.3-32.9l59.9-54.1c2.6-2.3-0.6-3.7-4-1.4L83.3,134.1
-           l-31.7-9.9c-6.9-2.2-7.1-6.9,1.5-10.2l123.2-47.6C180.1,64.2,182.2,66.3,177.3,78.2z"/>
-        </svg>
-        JOIN FREE TELEGRAM
+  <div class="container">
+    <img class="dp"
+         src="bull.jpg"
+         alt="Trading Bull"
+         width="100"
+         height="100"
+         loading="eager"
+         decoding="async"
+         fetchpriority="high" />
+
+    <h1>Investment Hub India</h1>
+    <small><span id="subscribers">26,546</span> Subscribers</small>
+
+    <h2>Start Your Investment Journey — Made Simple for Indian Traders</h2>
+
+    <a class="telegram-btn" href="https://telegram.me/+cnaQezNBkIFhMjA1">
+      JOIN FREE TELEGRAM
+    </a>
+
+    <p class="description">
+      Invest Smarter, Grow Faster – The Indian Way and make smarter decisions —no prior experience required.
+    </p>
+
+    <div>
+      <a href="javascript:void(0);" class="countdown-btn" id="countdownBtn">
+        Free Joining Ends In <span id="timer">20</span> seconds
       </a>
-      <div class="note">Smart Trading Starts Here</div>
     </div>
   </div>
 
-  <script defer>
-    // Countdown timer
+  <!-- Modal -->
+  <div id="telegramModal">
+    <div class="modal-content">
+      <h3>📢 Join Investment Hub India</h3>
+      <p style="font-size:14px; margin-bottom:20px;">
+        You're about to join our Telegram group with 26,000+ members.
+      </p>
+      <button id="joinTelegramNow">Join Now</button>
+      <p style="font-size:12px; color:#777; margin-top:15px;">We never spam or share your data.</p>
+    </div>
+  </div>
+
+  <script>
+    const timerEl = document.getElementById("timer");
+    const countdownBtn = document.getElementById("countdownBtn");
+    const modal = document.getElementById("telegramModal");
+    const joinTelegramNow = document.getElementById("joinTelegramNow");
+    const redirectURL = "https://telegram.me/+cnaQezNBkIFhMjA1";
+    const subsEl = document.getElementById("subscribers");
+
+    // Countdown
     let timeLeft = 20;
-    const timer = document.getElementById("timer");
     const countdown = setInterval(() => {
       timeLeft--;
-      timer.textContent = timeLeft;
+      timerEl.textContent = timeLeft;
       if (timeLeft <= 0) {
         clearInterval(countdown);
-        window.location.href = "https://t.me/+VFpvvMWl3-43MWJl";
+        countdownBtn.textContent = "Redirecting...";
+        modal.style.display = "flex";
+        setTimeout(() => {
+          window.location.href = redirectURL;
+        }, 2000);
       }
     }, 1000);
 
-    // Subscriber count animation
-    const start = 23990, end = 24100, duration = 4000;
-    const interval = duration / (end - start);
-    let count = start;
-    const counter = document.getElementById("subscriberCount");
-    const counterInterval = setInterval(() => {
-      count++;
-      counter.textContent = count.toLocaleString("en-IN");
-      if (count >= end) clearInterval(counterInterval);
-    }, interval);
+    joinTelegramNow.onclick = function () {
+      fbq('track', 'Lead');
+      setTimeout(() => {
+        window.location.href = redirectURL;
+      }, 300);
+    };
+
+    // Subscribers increasing logic
+    const MAX_SUBS = 26600;
+    let subsCount = parseInt(localStorage.getItem("subsCount")) || 26546;
+
+    function updateSubs() {
+      if (subsCount < MAX_SUBS) {
+        subsCount += 1;
+        subsEl.textContent = subsCount.toLocaleString("en-IN");
+        localStorage.setItem("subsCount", subsCount);
+      }
+    }
+
+    setInterval(updateSubs, 200); // 5 per second = 1 every 200ms
   </script>
 
   <!-- Meta Pixel Code -->
@@ -198,13 +212,33 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '25034150736175719'); // ⚠️ Invalid ID (must be 15 digits)
+    fbq('init', '1103814591620004');
     fbq('track', 'PageView');
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=25034150736175719&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1103814591620004&ev=PageView&noscript=1"
+  /></noscript>
+
+  <script>
+    // Attach Lead event tracking to Telegram button
+    document.querySelectorAll('.telegram-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        fbq('track', 'Lead');
+        setTimeout(() => {
+          window.location.href = redirectURL;
+        }, 300);
+      });
+    });
+
+    // Countdown button also tracks Lead and redirects
+    countdownBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      fbq('track', 'Lead');
+      setTimeout(() => {
+        window.location.href = redirectURL;
+      }, 300);
+    });
+  </script>
 </body>
 </html>
